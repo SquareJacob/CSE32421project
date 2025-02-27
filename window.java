@@ -1,6 +1,10 @@
+import java.awt.event.ActionListener;
+
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import java.awt.event.ActionEvent;
 
 public class window{
     public static void main(String[] args){
@@ -8,6 +12,13 @@ public class window{
         JPanel panel = new JPanel();
         String[] items = {"WE", "WIN", "DOWS"}; //Ok but actually this is where the entities will go
         JComboBox<String> comboBox = new JComboBox<>(items);
+        comboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedOption = (String) comboBox.getSelectedItem();
+                System.out.println(selectedOption);
+            }
+        });
         panel.add(comboBox);
         frame.add(panel);
         frame.setSize(600, 400);
