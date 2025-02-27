@@ -15,8 +15,7 @@ public class window{
         comboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String selectedOption = (String) comboBox.getSelectedItem();
-                System.out.println(selectedOption);
+                dropdown.update(e, (String) comboBox.getSelectedItem()); 
             }
         });
         panel.add(comboBox);
